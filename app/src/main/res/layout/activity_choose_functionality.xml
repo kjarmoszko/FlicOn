@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".flicmanagment.ChooseFunctionalityActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="None"
+        android:id="@+id/noneButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="noneButtonClicked"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flashlight"
+        android:id="@+id/flashlightButton"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/noneButton"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flash"
+        android:id="@+id/flashButton"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/flashlightButton"
+        android:onClick="flashButtonClicked"/>
+
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Sound Alarm"
+    android:id="@+id/soundAlarmButton"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/flashButton"
+    android:onClick="soundAlarmButtonClicked"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vibrate"
+        android:id="@+id/vibrateButton"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/soundAlarmButton"
+        android:onClick="vibrateButtonClicked"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find Phone"
+        android:id="@+id/findPhoneButton"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/vibrateButton"
+        android:onClick="findPhoneClicked"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Google Assistant"
+        android:id="@+id/googleAssistantButton"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/findPhoneButton"
+        android:onClick="googleAssistantClicked"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick Up Phone"
+        android:id="@+id/pickUpPhoneButton"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/googleAssistantButton"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Volume"
+        android:id="@+id/changeVolumeButton"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/pickUpPhoneButton"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency Call"
+        android:id="@+id/emergencyCallButton"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/changeVolumeButton"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency SMS"
+        android:id="@+id/emergencySmsButton"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/emergencyCallButton"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/cancelButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:onClick="cancelButtonClicked"/>
+
+
+
+</RelativeLayout>

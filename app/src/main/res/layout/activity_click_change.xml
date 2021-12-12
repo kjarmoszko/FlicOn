@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".flicmanagment.ClickChangeActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:id="@+id/activityChangeLayout">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@raw/flic_img"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/flicImg"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/flicImg"
+        android:text="Flic Name"
+        android:textSize="24dp"
+        android:id="@+id/flicNameEditText"
+        android:singleLine="true"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/flicImg"
+        android:layout_below="@id/flicNameEditText"
+        android:text="Delete"
+        android:id="@+id/deleteButton"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/flicImg"
+        android:id="@+id/singleClickTextView"
+        android:text="Single Click"
+        android:textSize="24dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Single Click"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/singleClickTextView"
+        android:id="@+id/singleButton"
+        android:onClick="singleClick"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/singleButton"
+        android:id="@+id/doubleClickTextView"
+        android:text="Double Click"
+        android:textSize="24dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Double Click"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/doubleClickTextView"
+        android:id="@+id/doubleButton"
+        android:onClick="doubleClick"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/doubleButton"
+        android:id="@+id/holdTextView"
+        android:text="Hold"
+        android:textSize="24dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hold"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/holdTextView"
+        android:id="@+id/holdButton"
+        android:onClick="holdClick"/>
+</RelativeLayout>
