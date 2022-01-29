@@ -34,6 +34,7 @@ import com.example.flicon.database.Flic;
 import com.example.flicon.flicmanagment.FlicManageActivity;
 import com.example.flicon.flicmanagment.Functionalities;
 import com.example.flicon.phone.ContactListActivity;
+import com.example.flicon.phone.SendSmsActivity;
 
 import io.flic.flic2libandroid.Flic2Button;
 import io.flic.flic2libandroid.Flic2Manager;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView phoneButton;
     private ImageView lockButton;
     private ImageView flicButton;
+    private ImageView messageButton;
     public static ImageView flashlightButton;
     public static ImageView muteButton;
     private ImageView signalStrengthIcon;
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         signalStrengthIcon = (ImageView) findViewById(R.id.signalStrengthIcon);
         batteryStatusIcon = (ImageView) findViewById(R.id.batteryStatusIcon);
         textClock = (TextClock) findViewById(R.id.clockTextView);
+        messageButton = (ImageView) findViewById(R.id.messageButton);
 
         textClock.setFormat12Hour("hh:mm");
 
@@ -109,6 +112,13 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Functionalities.getInstance(MainActivity.this).speakerService();
                 }
+            }
+        });
+        messageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SendSmsActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -279,10 +289,10 @@ public class MainActivity extends AppCompatActivity {
             ##ekran podczas dzwonienia##
     Wiadomości:
         lista wiadomości
-        pisanie i wysyłka wiadomości
         ramka po nieodczytanej wiadomości
     Manage Flic:
         dodać menu kontekstowe przy usuwaniu przycisku
+        sprawdzić dodawanie/usuwanie fliców
     Blokada:
         blokowanie komórki z ekranem z przyciskiem odblokowania, dużym zegarem i ewentualnie że ktoś dzwonił, wysłał wiadomość
     Aplikacja:
