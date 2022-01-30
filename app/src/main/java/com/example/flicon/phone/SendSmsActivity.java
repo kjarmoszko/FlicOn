@@ -51,7 +51,10 @@ public class SendSmsActivity extends AppCompatActivity {
                 if (number.length() > 0 && message.length() > 0)
                     if (ContextCompat.checkSelfPermission(SendSmsActivity.this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
                         ActivityCompat.requestPermissions(SendSmsActivity.this, new String[]{Manifest.permission.SEND_SMS}, SEND_SMS);
-                    } else
+                    } else if (ContextCompat.checkSelfPermission(SendSmsActivity.this, Manifest.permission.RECEIVE_SMS) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(SendSmsActivity.this, new String[]{Manifest.permission.RECEIVE_SMS}, SEND_SMS); }
+
+                else
                         sendSMS(number, message);
                 else
                     Toast.makeText(getApplicationContext(), "Enter phone number and message", Toast.LENGTH_LONG).show();

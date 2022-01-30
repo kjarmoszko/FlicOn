@@ -35,6 +35,7 @@ import com.example.flicon.flicmanagment.FlicManageActivity;
 import com.example.flicon.flicmanagment.Functionalities;
 import com.example.flicon.phone.ContactListActivity;
 import com.example.flicon.phone.SendSmsActivity;
+import com.example.flicon.phone.SmsActivity;
 
 import io.flic.flic2libandroid.Flic2Button;
 import io.flic.flic2libandroid.Flic2Manager;
@@ -117,7 +118,8 @@ public class MainActivity extends AppCompatActivity {
         messageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SendSmsActivity.class);
+                //Intent intent = new Intent(MainActivity.this, SendSmsActivity.class);
+                Intent intent = new Intent(MainActivity.this, SmsActivity.class);
                 startActivity(intent);
             }
         });
@@ -284,12 +286,12 @@ public class MainActivity extends AppCompatActivity {
 /* TODO
     Dzwonienie:
         ramka przy słuchawce po nieodebranym połączeniu
-        duża klawiatura numeryczna i dzwonienie z niej
+        ##duża klawiatura numeryczna i dzwonienie z niej
         -usprawnić: gdy ktoś dzwoni nie aktualizuje rejestru gdy go się przegląda
             ##ekran podczas dzwonienia##
     Wiadomości:
         lista wiadomości
-        ramka po nieodczytanej wiadomości
+        ##ramka po nieodczytanej wiadomości
     Manage Flic:
         dodać menu kontekstowe przy usuwaniu przycisku
         sprawdzić dodawanie/usuwanie fliców
