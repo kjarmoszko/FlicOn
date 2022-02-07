@@ -14,7 +14,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.media.AudioManager;
 import android.os.BatteryManager;
 import android.os.Build;
@@ -29,12 +28,10 @@ import android.widget.ImageView;
 import android.widget.TextClock;
 import android.widget.Toast;
 
-import com.example.flicon.database.DatabaseHelper;
-import com.example.flicon.database.Flic;
 import com.example.flicon.flicmanagment.FlicManageActivity;
 import com.example.flicon.flicmanagment.Functionalities;
 import com.example.flicon.phone.ContactListActivity;
-import com.example.flicon.phone.SendSmsActivity;
+import com.example.flicon.phone.LockScreenActivity;
 import com.example.flicon.phone.SmsActivity;
 
 import io.flic.flic2libandroid.Flic2Button;
@@ -44,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private Flic2Manager manager;
     private static final int CAMERA_REQUEST = 3;
     private static final int MODIFY_AUDIO = 5;
+    private static final int DISABLE_KEYGUARD = 9;
     private ImageView phoneButton;
     private ImageView lockButton;
     private ImageView flicButton;
@@ -156,10 +154,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewAll() { //db test
+
         lockButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Cursor res = DatabaseHelper.getInstance(MainActivity.this).getAllData();
+//                if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.DISABLE_KEYGUARD) != PackageManager.PERMISSION_GRANTED) {
+//                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.DISABLE_KEYGUARD}, DISABLE_KEYGUARD);
+//                } else {
+                Intent intent = new Intent(MainActivity.this, LockScreenActivity.class);
+                startActivity(intent);
+               /* Cursor res = DatabaseHelper.getInstance(MainActivity.this).getAllData();
 //                Cursor res = DatabaseHelper.getInstance(MainActivity.this).getAllFunction();
                 if (res.getCount() == 0) {
                     //show massage
@@ -175,10 +179,12 @@ public class MainActivity extends AppCompatActivity {
 //                    buffer.append(res.getString(4) + "\n\n");
                 }
                 //show all
-                showMassage("Data", buffer.toString());
+                showMassage("Data", buffer.toString());*/
             }
         });
     }
+
+
 
     public void showMassage(String title, String message) { //db test
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -211,6 +217,13 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, "ModifyAudio Permission DENIED", Toast.LENGTH_SHORT).show();
                 }
                 break;
+            case DISABLE_KEYGUARD:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Intent intent = new Intent(MainActivity.this, LockScreenActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(this, "Disable Keyguard Permission DENIED", Toast.LENGTH_SHORT).show();
+                }
         }
     }
 

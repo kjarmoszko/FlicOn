@@ -26,11 +26,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlicOn">
         <activity
+            android:name=".phone.LockScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".phone.SmsActivity"
-            android:exported="false" />
+            android:screenOrientation="portrait"  />
         <activity
             android:name=".phone.SendSmsActivity"
-            android:exported="false" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".phone.AddNewPhoneContactActivity"
             android:screenOrientation="portrait" />
