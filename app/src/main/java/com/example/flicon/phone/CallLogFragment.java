@@ -22,7 +22,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.flicon.MainActivity;
 import com.example.flicon.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.LinkedList;
 import java.util.TreeMap;
@@ -34,18 +36,27 @@ public class CallLogFragment extends Fragment {
     private static final int READ_LOG = 3;
     private ListView listView;
     private TreeMap<String, String> contactMap;
+    private FloatingActionButton phoneKeyboardButton;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.call_log_fragment, container, false);
         listView = (ListView) view.findViewById(R.id.callLogListView);
+        phoneKeyboardButton = (FloatingActionButton) view.findViewById(R.id.phoneKeyboardButton);
 
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_CONTACTS}, PICK_CONTACT);
         } else {
             contactMap = getContactsMap();
         }
+        phoneKeyboardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ChooseNumberActivity.class);
+                startActivity(intent);
+            }
+        });
         getCallLogs();
 
         return view;

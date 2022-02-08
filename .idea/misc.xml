@@ -8,6 +8,7 @@
         <entry key="..\:/Users/gorun/AndroidStudioProjects/FlicOn/app/src/main/res/layout/activity_add_new_phone_contact.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gorun/AndroidStudioProjects/FlicOn/app/src/main/res/layout/activity_alarm.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gorun/AndroidStudioProjects/FlicOn/app/src/main/res/layout/activity_choose_functionality.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/gorun/AndroidStudioProjects/FlicOn/app/src/main/res/layout/activity_choose_number.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gorun/AndroidStudioProjects/FlicOn/app/src/main/res/layout/activity_click_change.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gorun/AndroidStudioProjects/FlicOn/app/src/main/res/layout/activity_contact_list.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gorun/AndroidStudioProjects/FlicOn/app/src/main/res/layout/activity_emergency_phone.xml" value="0.36666666666666664" />
@@ -26,7 +27,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16_PREVIEW" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
